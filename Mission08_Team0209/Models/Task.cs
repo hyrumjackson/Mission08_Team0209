@@ -12,7 +12,7 @@ namespace Mission08_Team0209.Models
         [Required]
         public string TaskItem { get; set; }
 
-        public int? DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
         [Required]
         public int Quadrant { get; set; }

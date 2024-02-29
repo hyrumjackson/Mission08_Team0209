@@ -2,7 +2,31 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+
+    <h1>The 7 Habits of Highly Effective People To-Do List</h1><br />
+
+    <p>
+        In the book, "The 7 Habits of Highly Effective People", The author, Steven Covey talks about the habit of
+        “Putting First Things First”, and suggests that Tasks on the To Do list be broken out into four
+        Quadrants.
+    </p><br />
+
+    <ul>
+        <li> Quadrant I: Important / Urgent </li>
+        <li> Quadrant II: Important / Not Urgent </li>
+        <li> Quadrant III: Not Important / Urgent </li>
+        <li> Quadrant IV: Not Important / Not Urgent </li>
+    </ul><br />
+
+    <p>You can add a task to your to-do list <a asp-controller="Home" asp-action="CreateTask">here</a></p>
+    <p>After you have added to your to-do list, you can see and manage your to-do list <a asp-controller="Home" asp-action="Quadrant">here</a></p>
+    <br />
+
+    <p>Find more about Steven Covey and his book:</p>
+    <a href="https://www.franklincovey.com/the-7-habits/">FranklinCovey.com</a><br>
+
+    <a href="https://www.franklincovey.com/the-7-habits/"><img src="~/img/sevenhabits.jpeg" alt="Baconsale" class="img-fluid" style="max-height: 250px;" />
+    </a>
+
 </div>

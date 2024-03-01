@@ -44,7 +44,8 @@ namespace Mission08_Team0209.Controllers
 		[HttpGet]
 		public IActionResult Quadrants()
 		{
-			return View();
+            var uncompletedTasks = _repo.Tasks.Where(t => t.Completed == false).ToList();
+            return View(uncompletedTasks);
 		}
 	}
 }

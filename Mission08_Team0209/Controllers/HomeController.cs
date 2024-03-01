@@ -42,7 +42,7 @@ namespace Mission08_Team0209.Controllers
 		}
 
 		[HttpGet]
-		public IActionResult Quadrant()
+		public IActionResult Quadrants()
 		{
 			return View();
 		}

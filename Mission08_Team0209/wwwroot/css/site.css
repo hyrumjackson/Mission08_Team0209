@@ -29,16 +29,29 @@ body {
     padding: 20px;
 }
 
+.paddingVertical {
+    padding-top: calc(15% - 20px); /* Adjust padding as needed */
+    padding-bottom: calc(15% - 20px); /* Adjust padding as needed */
+}
+
 .center {
     text-align: center;
 }
 
+.vertical-text-container {
+    height: 100%; /* Ensure the container takes up the full height of its parent */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 20px; /* Adjust padding as needed */
+}
 
-/*.vertical-text {
-    writing-mode: Vertical-LR;*/ /* Sets vertical writing mode */
-/*text-orientation: mixed;*/ /* Ensures proper rendering of text orientation */
-/*transform: rotate(180deg);
-}*/
+.vertical-text {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    margin: auto;
+}
 
 .col-5 {
     padding: 20px;

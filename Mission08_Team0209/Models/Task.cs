@@ -12,9 +12,11 @@ namespace Mission08_Team0209.Models
         [Required]
         public string TaskItem { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime? DueDate { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Quadrant must be between 1 - 4")]
+        [Range(1,4)]
         public int Quadrant { get; set; }
 
         [ForeignKey("CategoryId")]
@@ -22,6 +24,7 @@ namespace Mission08_Team0209.Models
 
         public Category? Category { get; set; }
 
-        public bool? Completed { get; set; }
+        [Required]
+        public bool Completed { get; set; }
     }
 }

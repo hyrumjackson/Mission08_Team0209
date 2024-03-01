@@ -1,14 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Create Task";
+    var pageTitle = Model.TaskId == 0 ? "Add Task" : "Edit Task";
+    ViewData["Title"] = pageTitle;
 }
 
 @model Mission08_Team0209.Models.Task
 
 <div>
-    <h1>Add a task</h1>
+    <h1>@pageTitle</h1>
 </div>
 
-<form method="post" asp-controller="Home" asp-action="CreateTask">
+<form method="post" asp-controller="Home" asp-action="@(Model.TaskId == 0 ? "CreateTask" : "Edit")">
 
     <div>
         <input type="hidden" asp-for="TaskId" />
@@ -59,7 +60,7 @@
         <br />
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">@pageTitle</button>
 </form>
 
 

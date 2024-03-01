@@ -4,7 +4,7 @@
     <h1>Add a task</h1>
 </div>
 
-<form method="post">
+<form method="post" asp-controller="Home" asp-action="CreateTask">
 
     <div>
         <input type="hidden" asp-for="TaskId" />

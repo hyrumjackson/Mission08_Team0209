@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Mission08_Team0209.Models;
@@ -20,20 +19,26 @@ namespace Mission08_Team0209.Controllers
 			return View();
 		}
 
-		//[HttpPost]
-		//public IActionResult Index()
-		//{
-		//	return View();
-		//}
+		[HttpPost]
+		public IActionResult CreateTask(Mission08_Team0209.Models.Task t)
+		{
+			if (ModelState.IsValid)
+			{
+				_repo.AddTask(t);
+				return RedirectToAction("Index");
+			}
+
+			ViewBag.Categories = _repo.Categories.ToList();
+            return View(t);
+        }
+
 
 		[HttpGet]
 		public IActionResult CreateTask()
 		{
-			//ViewBag.Categories = _repo.Categories
-			//	.OrderBy(x => x.CategoryName)
-			//	.ToList();
+			ViewBag.Categories = _repo.Categories.ToList();
 
-			return View();
+			return View(new Mission08_Team0209.Models.Task());
 		}
 
 		[HttpGet]

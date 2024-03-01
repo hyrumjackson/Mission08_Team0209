@@ -25,8 +25,8 @@ namespace Mission08_Team0209.Controllers
 			if (ModelState.IsValid)
 			{
 				_repo.AddTask(t);
-				return RedirectToAction("Index");
-			}
+                return RedirectToAction("CreateTask");
+            }
 
 			ViewBag.Categories = _repo.Categories.ToList();
             return View(t);

@@ -32,15 +32,18 @@
                 {
                     @if (x.Quadrant == 1 && x.Completed == false)
                     {
-                        <tr>
-                            <td>@x.TaskItem</td>
-                            <td>
-                                <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
-                            </td>
-                            <td>
-                                <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
-                            </td>
-                        </tr>
+                        <table>
+                            <tr>
+                                <td>@x.TaskItem</td>
+                                <td>
+                                    <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                                </td>
+                            </tr>
+                        </table>
+                        
                     }
                 }
             </div>
@@ -51,38 +54,100 @@
                 Quadrant 1
             </div>
         }
-        @* <div class="col-5">
-            Quadrant 1
-            @foreach (var x in Model)
-            {
-                @if (x.Quadrant == 1 && x.Completed == false)
+        @if (Model != null)
+        {
+            <div class="col-5">
+                Quadrant 2
+                @foreach (var x in Model)
                 {
-                    <tr>
-                    <td>@x.TaskItem</td>
-                    <td>
-                        <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
-                    </td>
-                </tr>
+                    @if (x.Quadrant == 2 && x.Completed == false)
+                    {
+                        <table>
+                            <tr>
+                                <td>@x.TaskItem</td>
+                                <td>
+                                    <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    }
                 }
-                
-            }
-        </div> *@
-        <div class="col-5">
-            Quadrant 2
-        </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-5">
+                Quadrant 2
+            </div>
+        }
     </div>
     <div class="row">
         <div class="col-2 center padding col-2-border">
             Not Important
         </div>
-        <div class="col-5">
-            Quadrant 3
-        </div>
-        <div class="col-5">
-            Quadrant 4
-        </div>
+        @if (Model != null)
+        {
+            <div class="col-5">
+                Quadrant 3
+                @foreach (var x in Model)
+                {
+                    @if (x.Quadrant == 3 && x.Completed == false)
+                    {
+                        <table>
+                            <tr>
+                                <td>@x.TaskItem</td>
+                                <td>
+                                    <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    }
+                }
+            </div>
+        }
+        else
+        {
+            <div class="col-5">
+                Quadrant 3
+            </div>
+        }
+        @if (Model != null)
+        {
+            <div class="col-5">
+                Quadrant 4
+                @foreach (var x in Model)
+                {
+                    @if (x.Quadrant == 4 && x.Completed == false)
+                    {
+                        <table>
+                            <tr>
+                                <td>@x.TaskItem</td>
+                                <td>
+                                    <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    }
+                }
+            </div>
+        }
+        else
+        {
+            <div class="col-5">
+                Quadrant 4
+            </div>
+        }
     </div>
 </div>

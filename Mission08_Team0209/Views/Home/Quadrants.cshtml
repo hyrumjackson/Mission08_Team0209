@@ -4,6 +4,8 @@
 @{
 }
 
+@model List<Mission08_Team0209.Models.Task>
+
 <div class="container bordered-grid">
     <div class="row center">
         <div class="col center padding">
@@ -24,9 +26,52 @@
         <div class="col-2 center padding col-2-border">
             Important
         </div>
-        <div class="col-5">
+        @if (Model != null)
+        {
+            <div class="col-5">
+                Quadrant 1
+                @foreach (var x in Model)
+                {
+                    @if (x.Quadrant == 1 && x.Completed == false)
+                    {
+                        <tr>
+                            <td>@x.TaskItem</td>
+                            <td>
+                                <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </div>
+        }
+        else
+        {
+            <div class="col-5">
+                Quadrant 1
+            </div>
+        }
+        @* <div class="col-5">
             Quadrant 1
-        </div>
+            @foreach (var x in Model)
+            {
+                @if (x.Quadrant == 1 && x.Completed == false)
+                {
+                    <tr>
+                    <td>@x.TaskItem</td>
+                    <td>
+                        <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                    </td>
+                </tr>
+                }
+                
+            }
+        </div> *@
         <div class="col-5">
             Quadrant 2
         </div>

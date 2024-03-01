@@ -6,6 +6,8 @@
 		IQueryable<Category> Categories { get; }
 
 		public void AddTask(Task task);
+        public void UpdateTask(Task task);
+        public void CompleteTask(int taskId);
 
     }
 }

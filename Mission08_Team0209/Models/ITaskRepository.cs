@@ -1,6 +1,6 @@
 ﻿namespace Mission08_Team0209.Models
 {
-    public interface ITaskRespository
+    public interface ITaskRepository
     {
         List<Task> Tasks { get; }
 

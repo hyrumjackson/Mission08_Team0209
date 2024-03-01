@@ -1,14 +1,15 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission08_Team0209.Models;
 
 namespace Mission08_Team0209.Controllers
 {
 	public class HomeController : Controller
 	{
-		private ITaskRespository _repo;
+		private ITaskRepository _repo;
 
-		public HomeController(ITaskRespository temp)
+		public HomeController(ITaskRepository temp)
 		{
 			_repo = temp;
 		}
@@ -26,8 +27,12 @@ namespace Mission08_Team0209.Controllers
 		//}
 
 		[HttpGet]
-		public IActionResult Tasks()
+		public IActionResult CreateTask()
 		{
+			//ViewBag.Categories = _repo.Categories
+			//	.OrderBy(x => x.CategoryName)
+			//	.ToList();
+
 			return View();
 		}
 
